@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Button } from "@nextui-org/button";
-import { today, getLocalTimeZone, parseDate } from "@internationalized/date";
+import { today, getLocalTimeZone } from "@internationalized/date";
 
 import WorldClockItem from "./WorldClockItem";
 import SettingsDropdown from "./DropdownMenu";
