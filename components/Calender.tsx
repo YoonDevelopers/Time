@@ -1,5 +1,4 @@
-import { getHolidays } from "@/components/Holidays";
-import { useState, useEffect } from "react";
+
 
 // 공휴일 데이터 타입
 export interface Holiday {

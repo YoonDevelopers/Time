@@ -30,7 +30,7 @@ import {
   Anton,
   Zilla_Slab,
   Manrope,
-} from "@next/font/google";
+} from "next/font/google";
 
 // 각 폰트 로더를 모듈 스코프에서 const로 선언
 export const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: ["400", "700"] });

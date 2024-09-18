@@ -11,8 +11,8 @@ import { usePathname } from "next/navigation"; // 페이지 경로 가져오기
 import { fonts } from "./font"; // Import the fonts array from fonts.ts
 import { EllipsisHorizontalIcon } from "@heroicons/react/24/outline"; // 설정 아이콘 (Heroicons 사용)
 interface SettingsDropdownProps {
-  handleFontChange: (font: string) => void;
-  handleTimeFormatChange?: (format: string) => void;
+  handleFontChange: (font: React.Key) => void;
+  handleTimeFormatChange?: (format: React.Key) => void;
 }
 // 지원하는 로케일 목록
 const supportedLocales = ['en', 'ko'];
@@ -42,7 +42,7 @@ export default function SettingsDropdown({ handleFontChange }: SettingsDropdownP
   );
 }
 // 폰트 선택 드롭다운
-export function FontDropdown({ handleFontChange }: { handleFontChange: (key: string) => void }) {
+export function FontDropdown({ handleFontChange }: { handleFontChange: (key: React.Key) => void }) {
   return (
     <Dropdown>
       <DropdownTrigger>
@@ -102,7 +102,7 @@ export function LanguageDropdown() {
 }
 
 // 시간 형식 선택 드롭다운
-export function TimeFormatDropdown({ handleTimeFormatChange }: { handleTimeFormatChange: (key: string) => void }) {
+export function TimeFormatDropdown({ handleTimeFormatChange }: { handleTimeFormatChange: (key: React.Key) => void }) {
   return (
     <Dropdown>
       <DropdownTrigger>

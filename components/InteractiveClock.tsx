@@ -1,11 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Button } from "@nextui-org/button";
-import { Card } from "@nextui-org/card";
 import { today, getLocalTimeZone, parseDate } from "@internationalized/date";
 
 import WorldClockItem from "./WorldClockItem";
-import SettingsDropdown, {FontDropdown ,LanguageDropdown, TimeFormatDropdown } from "./DropdownMenu";
+import SettingsDropdown from "./DropdownMenu";
 import { fonts } from "./font"; // Import the fonts list
 import { useTranslations } from "next-intl";
 import {  usePathname } from "next/navigation";
@@ -103,7 +102,7 @@ const worldClocks = [
   ? getTimeInTimeZone(worldClocks.find((clock) => clock.city === selectedCity)!.timeZone)
   : new Date(); // 로컬 시간을 사용
 
-  const handleFontChange = (key: string) => {
+  const handleFontChange = (key: React.Key) => {
     const selectedFont = fonts.find((font) => font.key === key);
     if (selectedFont) {
       setFont(selectedFont.font);
