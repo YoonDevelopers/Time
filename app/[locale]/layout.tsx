@@ -5,6 +5,7 @@ import "./globals.css";
 import {NextUIProvider} from "@nextui-org/system";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
+import Head from "next/head";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -40,6 +41,25 @@ export default async function RootLayout({
   const messages = await getMessages();
   return (
     <html lang={locale} >
+            <Head>
+        <title>International Time and Holidays</title>
+        <meta name="description" content="Check the current international time and public holidays in different countries." />
+        <meta property="og:title" content="International Time and Holidays" />
+        <meta property="og:description" content="Find out the current time around the world and the public holidays in various countries." />
+        <meta property="og:image" content="/icons/icon-512x512.png" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://time-nrpw.vercel.app" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "International Time and Holidays",
+            "url": "https://time-nrpw.vercel.app",
+            "description": "Find out the current time and public holidays in various countries.",
+          })}
+        </script>
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning={true}
       >
